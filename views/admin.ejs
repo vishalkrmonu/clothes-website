@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Admin panel or details of all users</h1>
+    <h2>Registered Users</h2>
+    <table border="1">
+        <!-- Embedded Javascript -->
+         <!-- with the help of ejs we extract the data from database and show the data in web page -->
+        <!-- table header ko show krne ke liye -->
+        <thead>  <!-- contains the table headers (Name, Number, Gender, Email). -->
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Gender</th>
+                <th>Email</th>
+            </tr> 
+        </thead>
+        <tbody>   <!--this part is use for show the data , using server side -->
+
+            <% registers.forEach(register => { %>
+                <tr>
+                    <td><%= register.myname %></td>
+                    <td><%= register.mynumber %></td>
+                    <td><%= register.mygender %></td>
+                    <td><%= register.myemail %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+   
+        
+    </table>
+</body>
+</html>
